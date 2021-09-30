@@ -2,6 +2,8 @@
 
 <html lang="en">
 
+
+
     <head>
 
         <!-- ==============================================
@@ -69,7 +71,10 @@
         
     </head>
 
+
     <body class="home">
+
+        
         
         <!-- Preloader -->
         <div id="preloader" data-timeout="2000" class="odd preloader counter">
@@ -182,6 +187,7 @@
 
         </header>
 
+
         <!-- Hero -->
         <section id="slider" class="hero p-0">
             <div class="swiper-container no-slider animation slider-h-100 slider-h-auto alt">
@@ -213,9 +219,51 @@
     
                                         <div class="row form-group-margin">
                                             <div class="col-12 m-0 p-2 input-group">
+                                                <label for="Monto">Monto</label>
                                                 <input type="number" name="monto" class="form-control field-name" placeholder="Monto">
+                                                <select name="info" class="form-control field-info" style="display: none;">
+                                                    <option value="PeruCash" selected disabled><Em> PEN</Em></option>
+                                                    <option><img src="/assets/images/argentina.png" class="BanCash" alt=""> ARS</option>
+                                                    <option><img src="/assets/images/colombia.png" class="BanCash" alt=""> COP</option>
+                                                </select>
+                                                <div class="selectbox">
+                                                    <div class="select" id="select">
+                                                        <div class="contenido-select">
+                                                            <p class="descripcion">Moneda</p>
+                                                        </div>
+                                                        <i class="fas fa-angle-down"></i>
+                                                    </div>
+                                    
+                                                    <div class="opciones" id="opciones">
+                                                        <a href="#" class="opcion">
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/peru.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">PEN</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="opcion">
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/argentina.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">ARS</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="opcion">
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/colombia.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">COP</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
+                                                <label for="EnviarDesde">Enviar Desde</label>
                                                 <i class="icon-arrow-down mr-3"></i>
                                                 <select name="info" class="form-control field-info">
                                                     <option value="" selected disabled><Em>Enviar desde</Em></option>
@@ -224,6 +272,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
+                                                <label for="RecivirEn">Resivir en</label>
                                                 <i class="icon-arrow-down mr-3"></i>
                                                 <select name="info" class="form-control field-info">
                                                     <option value="" selected disabled><Em>Recibir en</Em></option>
@@ -514,6 +563,8 @@
                 </div>
             </div>
         </section>
+
+
         
         <!-- Footer -->
         <footer>
