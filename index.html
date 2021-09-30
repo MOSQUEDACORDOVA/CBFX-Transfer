@@ -222,11 +222,6 @@
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="Monto">Monto</label>
                                                 <input type="number" name="monto" class="form-control field-name" placeholder="Monto">
-                                                <select name="info" class="form-control field-info" style="display: none;">
-                                                    <option value="PeruCash" selected disabled><Em> PEN</Em></option>
-                                                    <option><img src="/assets/images/argentina.png" class="BanCash" alt=""> ARS</option>
-                                                    <option><img src="/assets/images/colombia.png" class="BanCash" alt=""> COP</option>
-                                                </select>
                                                 <div class="selectbox">
                                                     <div class="select" id="select">
                                                         <div class="contenido-select">
@@ -265,22 +260,71 @@
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="EnviarDesde">Enviar Desde</label>
-                                                <i class="icon-arrow-down mr-3"></i>
-                                                <select name="info" class="form-control field-info">
-                                                    <option value="" selected disabled><Em>Enviar desde</Em></option>
-                                                    <option>Argentina</option>
-                                                    <option>Colombia</option>
-                                                </select>
+                                                <div class="selectbox" id="EnviarDesde">
+                                                    <div class="select" id="selectdesde">
+                                                        <div class="contenido-select" id="contenidoselecdesde">
+                                                            <p class="descripcion">Enviar Desde</p>
+                                                        </div>
+                                                        <i class="fas fa-angle-down"></i>
+                                                    </div>
+                                    
+                                                    <div class="opciones" id="opcionesdesde">
+                                                        <a href="#" class="opcion opciondesde">
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/argentina.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">ARS</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="opcion opciondesde" >
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/colombia.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">COP</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
-                                                <label for="RecivirEn">Resivir en</label>
-                                                <i class="icon-arrow-down mr-3"></i>
-                                                <select name="info" class="form-control field-info">
-                                                    <option value="" selected disabled><Em>Recibir en</Em></option>
-                                                    <option>Argentina</option>
-                                                    <option>Colombia</option>
-                                                    <option>Venezuela</option>
-                                                </select>
+                                                <label for="RecivirEn">Recibir en</label>
+                                                <div class="selectbox" id="recibir">
+                                                    <div class="select" id="selectrecibir">
+                                                        <div class="contenido-select" id="contenidoselecrecibir">
+                                                            <p class="descripcion">Recibir en</p>
+                                                        </div>
+                                                        <i class="fas fa-angle-down"></i>
+                                                    </div>
+                                    
+                                                    <div class="opciones" id="opcionesrecibir">
+                                                        <a href="#" class="opcion opcionrecibir">
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/argentina.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">ARS</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="opcion opcionrecibir" >
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/colombia.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">COP</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="opcion opcionrecibir" >
+                                                            <div class="contenido-opcion">
+                                                                <img src="assets/images/colombia.png" alt="">
+                                                                <div class="textos">
+                                                                    <p class="descripcion">BS</p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="col-12 col-12 m-0 pl-md-2">
                                                 <span class="form-alert"></span>

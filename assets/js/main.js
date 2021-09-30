@@ -731,3 +731,53 @@ select.addEventListener('click', () => {
 	select.classList.toggle('active');
 	opciones.classList.toggle('active');
 });
+
+
+
+
+
+const selectdesde = document.querySelector('#selectdesde');
+const opcionesdesde = document.querySelector('#opcionesdesde');
+const contenidoSelectdesde = document.querySelector('#selectdesdeselect #contenidoselecdesde');
+const hiddenInputdesde = document.querySelector('#inputSelect');
+
+document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde) => {
+	opciondesde.addEventListener('click', (e) => {
+		e.preventDefault();
+		contenidoSelectdesde.innerHTML = e.currentTarget.innerHTML;
+		selectdesde.classList.toggle('active');
+		opcionesdesde.classList.toggle('active');
+		hiddenInputdesde.value = e.currentTarget.querySelector('.titulodesde').innerText;
+	});
+});
+
+selectdesde.addEventListener('click', () => {
+	selectdesde.classList.toggle('active');
+	opcionesdesde.classList.toggle('active');
+});
+
+
+
+
+
+
+
+const selectrecibir = document.querySelector('#selectrecibir');
+const opcionesrecibir = document.querySelector('#opcionesrecibir');
+const contenidoSelectrecibir = document.querySelector('#selectrecibir .contenidoselecrecibir');
+const hiddenInputrecibir = document.querySelector('#inputSelect');
+
+document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionrecibir) => {
+	opcionrecibir.addEventListener('click', (e) => {
+		e.preventDefault();
+		contenidoSelectrecibir.innerHTML = e.currentTarget.innerHTML;
+		selectrecibir.classList.toggle('active');
+		opcionesrecibir.classList.toggle('active');
+		hiddenInputrecibir.value = e.currentTarget.querySelector('.titulo').innerText;
+	});
+});
+
+selectrecibir.addEventListener('click', () => {
+	selectrecibir.classList.toggle('active');
+	opcionesrecibir.classList.toggle('active');
+});
