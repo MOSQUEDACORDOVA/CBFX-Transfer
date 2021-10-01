@@ -4878,4 +4878,7 @@ label{
 #selectrecibir{
     border-radius: 3px;
 }
+#opcionesdesde,#opcionesrecibir{
+    position: absolute;
+}
 /* Fin de rodolfo :( */
