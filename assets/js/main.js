@@ -747,7 +747,7 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
 		contenidoSelectdesde.innerHTML = e.currentTarget.innerHTML;
 		selectdesde.classList.toggle('active');
 		opcionesdesde.classList.toggle('active');
-		hiddenInputdesde.value = e.currentTarget.querySelector('.titulodesde').innerText;
+		hiddenInputdesde.value = e.currentTarget.querySelector('.titulo').innerText;
 	});
 });
 
