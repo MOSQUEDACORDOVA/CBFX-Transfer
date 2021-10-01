@@ -781,3 +781,12 @@ selectrecibir.addEventListener('click', () => {
 	selectrecibir.classList.toggle('active');
 	opcionesrecibir.classList.toggle('active');
 });
+
+
+
+$( document ).ready(function() {
+    $('#formPrimero').on('click',()=>{
+        $('.formdos').show("slow");
+        $('.FormPrimero').hide("slow");
+    })
+})
