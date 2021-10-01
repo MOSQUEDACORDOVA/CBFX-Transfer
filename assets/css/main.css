@@ -4857,6 +4857,15 @@ label{
 	.selectbox {
 		width: 35%;
 	}
+    #selectdesde{
+        width: 102% !important;
+    }
+    #selectrecibir{
+        width: 103%;
+    }
+    #recibir{
+        z-index: 0 !important;
+    }
 }
 #EnviarDesde{
     width: 100% !important;
