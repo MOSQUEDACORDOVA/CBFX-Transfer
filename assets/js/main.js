@@ -738,8 +738,8 @@ select.addEventListener('click', () => {
 
 const selectdesde = document.querySelector('#selectdesde');
 const opcionesdesde = document.querySelector('#opcionesdesde');
-const contenidoSelectdesde = document.querySelector('#selectdesdeselect #contenidoselecdesde');
-const hiddenInputdesde = document.querySelector('#inputSelect');
+const contenidoSelectdesde = document.querySelector('#selectdesde .contenido-select');
+const hiddenInputdesde = document.querySelector('#inputSelectdesde');
 
 document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde) => {
 	opciondesde.addEventListener('click', (e) => {
@@ -765,7 +765,7 @@ selectdesde.addEventListener('click', () => {
 const selectrecibir = document.querySelector('#selectrecibir');
 const opcionesrecibir = document.querySelector('#opcionesrecibir');
 const contenidoSelectrecibir = document.querySelector('#selectrecibir .contenidoselecrecibir');
-const hiddenInputrecibir = document.querySelector('#inputSelect');
+const hiddenInputrecibir = document.querySelector('#inputSelectrecibir');
 
 document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionrecibir) => {
 	opcionrecibir.addEventListener('click', (e) => {
