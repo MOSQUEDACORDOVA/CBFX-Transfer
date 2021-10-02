@@ -4864,8 +4864,12 @@ label{
         width: 103%;
     }
     #recibir{
-        z-index: 0 !important;
+        z-index: 1 !important;
     }
+    #EnviarDesde{
+        z-index: 99 !important;
+    }
+    
 }
 #EnviarDesde{
     width: 100% !important;
