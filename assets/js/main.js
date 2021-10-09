@@ -747,7 +747,36 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
 		contenidoSelectdesde.innerHTML = e.currentTarget.innerHTML;
 		selectdesde.classList.toggle('active');
 		opcionesdesde.classList.toggle('active');
-		hiddenInputdesde.value = e.currentTarget.querySelector('.titulo').innerText;
+		hiddenInputdesde.value = e.currentTarget.querySelector('.descripcion').innerText;
+        switch (e.currentTarget.querySelector('.descripcion').innerText) {
+            case 'Argentina':
+               if ($('.recibir_colombia').not(':visible')) {
+                    $('.recibir_colombia').removeClass('d-none')
+                }
+                console.log($('.descripcion').text())
+                if ($('#selectrecibir.descrip_argentina').text()=='Argentina'){
+                    $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
+                    <p class="descripcion desc_recibir">Recibir en</p>
+                </div>
+                <i class="fas fa-angle-down"></i>`)
+                }
+                $('.recibir_argentina').addClass('d-none')
+                $('.moneda_argentina').addClass('active')
+                $('.DescripcionMonto').html($('.moneda_argentina').html())
+                $('#inputSelect').val('ARS')
+
+                break;
+                case 'Colombia':
+                    if ($('.recibir_argentina').not(':visible')) {
+                        $('.recibir_argentina').removeClass('d-none')
+                    }
+                    $('.recibir_colombia').addClass('d-none')
+                    $('.DescripcionMonto').html($('.moneda_colombia').html())
+                    $('#inputSelect').val('COP')
+                    break;        
+            default:
+                break;
+        }
 	});
 });
 
@@ -773,9 +802,10 @@ document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionre
 		contenidoSelectrecibir.innerHTML = e.currentTarget.innerHTML;
 		selectrecibir.classList.toggle('active');
 		opcionesrecibir.classList.toggle('active');
-		hiddenInputrecibir.value = e.currentTarget.querySelector('.titulo').innerText;
+		hiddenInputrecibir.value = e.currentTarget.querySelector('.descripcion').innerText;
 	});
 });
+
 
 selectrecibir.addEventListener('click', () => {
 	selectrecibir.classList.toggle('active');
@@ -789,4 +819,8 @@ $( document ).ready(function() {
         $('.formdos').show("slow");
         $('.FormPrimero').hide("slow");
     })
+    var texto = hiddenInputrecibir.text();
+    console.log(texto);
 })
+
+
