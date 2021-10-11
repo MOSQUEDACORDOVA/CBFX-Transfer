@@ -723,7 +723,43 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
 		contenidoSelect.innerHTML = e.currentTarget.innerHTML;
 		select.classList.toggle('active');
 		opciones.classList.toggle('active');
-		hiddenInput.value = e.currentTarget.querySelector('.titulo').innerText;
+		hiddenInput.value = e.currentTarget.querySelector('.descripcion').innerText;
+        switch (e.currentTarget.querySelector('.descripcion').innerText) {
+            case 'ARS':
+                $('#contenidoselecdesde').html($('.moneda_argentina').html())
+                $('#inputSelectdesde').val('Argentina')
+                var PaisArgentinaTitular = "Isaac Mosqueda dese Argentina";
+                var PaisArgentinaBanco = "Isaac Mosqueda Titular"
+                var PaisArgentinaCuenta = "01234567890"
+                $('.PaisTitular').html(PaisArgentinaTitular)
+                $('.PaisBanco').html(PaisArgentinaBanco)
+                $('.PaisNumero').html(PaisArgentinaCuenta)
+            
+                break
+
+            case 'COP':{
+                $('#contenidoselecdesde').html($('.moneda_colombia').html())
+                $('#inputSelectdesde').val('Colombia')
+                var PaisColombiaTitular = "Isaac Mosqueda dese Colombia";
+                var PaisColombiaaBanco = "Isaac Mosqueda Titular"
+                var PaisColombiaCuenta = "01234567890"
+                $('.PaisTitular').html(PaisColombiaTitular)
+                $('.PaisBanco').html(PaisColombiaBanco)
+                $('.PaisNumero').html(PaisColombiaCuenta)
+                break
+            }
+            case 'PEN':{
+                var PaisPeruTitular = "Isaac Mosqueda dese Perú";
+                var PaisPeruBanco = "Isaac Mosqueda Titular"
+                var PaisPeruCuenta = "01234567890"
+                $('.PaisTitular').html(PaisPeruTitular)
+                $('.PaisBanco').html(PaisPeruBanco)
+                $('.PaisNumero').html(PaisPeruCuenta)
+            }   
+        
+            default:
+                break;
+        }
 	});
 });
 
@@ -753,7 +789,6 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                if ($('.recibir_colombia').not(':visible')) {
                     $('.recibir_colombia').removeClass('d-none')
                 }
-                console.log($('.descripcion').text())
                 if ($('#selectrecibir.descrip_argentina').text()=='Argentina'){
                     $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
                     <p class="descripcion desc_recibir">Recibir en</p>
@@ -777,6 +812,7 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
             default:
                 break;
         }
+
 	});
 });
 
@@ -819,8 +855,10 @@ $( document ).ready(function() {
         $('.formdos').show("slow");
         $('.FormPrimero').hide("slow");
     })
-    var texto = hiddenInputrecibir.text();
-    console.log(texto);
+    $('#AntesFinFormulario').on('click',()=>{
+        $('.FinFormulario').show("slow");
+        $('.formdos').hide("slow");
+    })
 })
 
 

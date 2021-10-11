@@ -4899,4 +4899,13 @@ label{
 #formPrimero{
     z-index: 0;
 }
+.FinFormulario{
+    display: none;
+    text-align: center;
+    background: #6a626273;
+    padding: 2rem;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+}
 /* Fin de rodolfo :( */
