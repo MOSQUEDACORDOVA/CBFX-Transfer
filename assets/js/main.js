@@ -734,6 +734,11 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
                 $('.PaisTitular').html(PaisArgentinaTitular)
                 $('.PaisBanco').html(PaisArgentinaBanco)
                 $('.PaisNumero').html(PaisArgentinaCuenta)
+                if ($('.recibir_colombia').not(':visible')) {
+                    $('.recibir_colombia').removeClass('d-none')
+                }
+                $('.recibir_argentina').addClass('d-none')
+                $('.moneda_argentina').addClass('active')
             
                 break
 
@@ -746,7 +751,12 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
                 $('.PaisTitular').html(PaisColombiaTitular)
                 $('.PaisBanco').html(PaisColombiaBanco)
                 $('.PaisNumero').html(PaisColombiaCuenta)
+                if ($('.recibir_argentina').not(':visible')) {
+                    $('.recibir_argentina').removeClass('d-none')
+                }
+                $('.recibir_colombia').addClass('d-none')
                 break
+                
             }
         
             default:
