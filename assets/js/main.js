@@ -741,21 +741,13 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
                 $('#contenidoselecdesde').html($('.moneda_colombia').html())
                 $('#inputSelectdesde').val('Colombia')
                 var PaisColombiaTitular = "Isaac Mosqueda dese Colombia";
-                var PaisColombiaaBanco = "Isaac Mosqueda Titular"
+                var PaisColombiaBanco = "Isaac Mosqueda Titular"
                 var PaisColombiaCuenta = "01234567890"
                 $('.PaisTitular').html(PaisColombiaTitular)
                 $('.PaisBanco').html(PaisColombiaBanco)
                 $('.PaisNumero').html(PaisColombiaCuenta)
                 break
             }
-            case 'PEN':{
-                var PaisPeruTitular = "Isaac Mosqueda dese Perú";
-                var PaisPeruBanco = "Isaac Mosqueda Titular"
-                var PaisPeruCuenta = "01234567890"
-                $('.PaisTitular').html(PaisPeruTitular)
-                $('.PaisBanco').html(PaisPeruBanco)
-                $('.PaisNumero').html(PaisPeruCuenta)
-            }   
         
             default:
                 break;
