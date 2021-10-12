@@ -4901,11 +4901,16 @@ label{
 }
 .FinFormulario{
     display: none;
-    text-align: center;
-    background: #6a626273;
-    padding: 2rem;
     color: white;
     font-weight: 600;
     font-size: 18px;
+}
+.pais{
+    padding: .5rem;
+    background: #1ec1671f;
+    margin: .5rem;
+}
+.pais h3{
+    color: var(--secondary-color);
 }
 /* Fin de rodolfo :( */
