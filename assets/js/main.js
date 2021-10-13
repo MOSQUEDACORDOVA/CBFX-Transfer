@@ -801,7 +801,14 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                 $('.moneda_argentina').addClass('active')
                 $('.DescripcionMonto').html($('.moneda_argentina').html())
                 $('#inputSelect').val('ARS')
-
+                if ($('#inputSelectrecibir').val() == 'Argentina') {
+                    console.log('hola mundo')
+                    $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
+                    <p class="descripcion desc_recibir">Recibir en</p>
+                </div>
+                <i class="fas fa-angle-down"></i>`)
+                    
+                }
                 break;
                 case 'Colombia':
                     if ($('.recibir_argentina').not(':visible')) {
@@ -810,6 +817,14 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                     $('.recibir_colombia').addClass('d-none')
                     $('.DescripcionMonto').html($('.moneda_colombia').html())
                     $('#inputSelect').val('COP')
+                    if ($('#inputSelectrecibir').val() == 'Colombia') {
+                        console.log('hola mundo')
+                        $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
+                        <p class="descripcion desc_recibir">Recibir en</p>
+                    </div>
+                    <i class="fas fa-angle-down"></i>`)
+                        
+                    }
                     break;        
             default:
                 break;
@@ -841,6 +856,9 @@ document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionre
 		selectrecibir.classList.toggle('active');
 		opcionesrecibir.classList.toggle('active');
 		hiddenInputrecibir.value = e.currentTarget.querySelector('.descripcion').innerText;
+        $('#selectrecibir').html(e.currentTarget.innerHTML)
+console.log('hello world')
+
 	});
 });
 
