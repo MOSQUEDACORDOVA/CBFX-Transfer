@@ -822,8 +822,7 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                         $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
                         <p class="descripcion desc_recibir">Recibir en</p>
                     </div>
-                    <i class="fas fa-angle-down"></i>`)
-                        
+                    <i class="fas fa-angle-down"></i>`)                       
                     }
                     break;        
             default:
@@ -855,10 +854,8 @@ document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionre
 		contenidoSelectrecibir.innerHTML = e.currentTarget.innerHTML;
 		selectrecibir.classList.toggle('active');
 		opcionesrecibir.classList.toggle('active');
-		hiddenInputrecibir.value = e.currentTarget.querySelector('.descripcion').innerText;
+		hiddenInputrecibir.value = e.currentTarget.querySelector('.descripcion').innerHTML;
         $('#selectrecibir').html(e.currentTarget.innerHTML)
-console.log('hello world')
-
 	});
 });
 
