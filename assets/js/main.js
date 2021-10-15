@@ -723,10 +723,10 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
 		contenidoSelect.innerHTML = e.currentTarget.innerHTML;
 		select.classList.toggle('active');
 		opciones.classList.toggle('active');
-		hiddenInput.value = e.currentTarget.querySelector('.descripcion').innerText;
-        switch (e.currentTarget.querySelector('.descripcion').innerText) {
+		hiddenInput.value = e.currentTarget.querySelector('.descripcion').innerHTML;
+        switch (e.currentTarget.querySelector('.descripcion').innerHTML) {
             case 'ARS':
-                $('#contenidoselecdesde').html($('.moneda_argentina').html())
+                $('#contenidoselecdesde').html($('#desde_argentina').html())
                 $('#inputSelectdesde').val('Argentina')
                 var PaisArgentinaTitular = "Isaac Mosqueda dese Argentina";
                 var PaisArgentinaBanco = "Isaac Mosqueda Titular"
@@ -743,7 +743,7 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
                 break
 
             case 'COP':{
-                $('#contenidoselecdesde').html($('.moneda_colombia').html())
+                $('#contenidoselecdesde').html($('#desde_colombia').html())
                 $('#inputSelectdesde').val('Colombia')
                 var PaisColombiaTitular = "Isaac Mosqueda dese Colombia";
                 var PaisColombiaBanco = "Isaac Mosqueda Titular"
@@ -758,6 +758,21 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
                 break
                 
             }
+            case 'USD':{
+                $('#contenidoselecdesde').html($('#desde_estados_unidos').html())
+                $('#inputSelectdesde').val('Estados Unidos')
+                var PaisUsaTitular = "Isaac Mosqueda dese Estados Unidos";
+                var PaisUsaBanco = "Isaac Mosqueda Titular"
+                var PaisUsaCuenta = "01234567890"
+                $('.PaisTitular').html(PaisUsaTitular)
+                $('.PaisBanco').html(PaisUsaBanco)
+                $('.PaisNumero').html(PaisUsaCuenta)
+                if ($('.recibir_usa').not(':visible')) {
+                    $('.recibir_usa').removeClass('d-none')
+                }
+                $('.recibir_usa').addClass('d-none')
+            }
+
         
             default:
                 break;
@@ -818,13 +833,26 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                     $('.DescripcionMonto').html($('.moneda_colombia').html())
                     $('#inputSelect').val('COP')
                     if ($('#inputSelectrecibir').val() == 'Colombia') {
-                        console.log('hola mundo')
                         $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
                         <p class="descripcion desc_recibir">Recibir en</p>
                     </div>
                     <i class="fas fa-angle-down"></i>`)                       
                     }
-                    break;        
+                    break;
+                    case 'Estados Unidos':{
+                        if ($('.recibir_usa').not(':visible')) {
+                            $('.recibir_usa').removeClass('d-none')
+                        }
+                        $('.recibir_usa').addClass('d-none')
+                        $('.DescripcionMonto').html($('.moneda_usa').html())
+                        $('#inputSelect').val('USD')
+                        if ($('#inputSelectrecibir').val() == 'Estado Unidos') {
+                            $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
+                            <p class="descripcion desc_recibir">Recibir en</p>
+                        </div>
+                        <i class="fas fa-angle-down"></i>`)                       
+                        }
+                    }      
             default:
                 break;
         }
