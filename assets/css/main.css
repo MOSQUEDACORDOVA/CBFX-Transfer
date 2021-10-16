@@ -4901,7 +4901,7 @@ label{
 }
 .FinFormulario{
     display: none;
-    color: white;
+    color: black;
     font-weight: 600;
     font-size: 18px;
 }
@@ -4914,5 +4914,8 @@ label{
 .pais h3{
     color: var(--secondary-color);
     margin-top: .2rem;
+}
+.select{
+    border: 2px solid #1ec167;
 }
 /* Fin de rodolfo :( */
