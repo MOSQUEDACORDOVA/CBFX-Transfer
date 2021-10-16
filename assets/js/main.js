@@ -824,6 +824,12 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                 <i class="fas fa-angle-down"></i>`)
                     
                 }
+                var PaisArgentinaTitular = "Isaac Mosqueda dese Argentina";
+                var PaisArgentinaBanco = "Isaac Mosqueda Titular"
+                var PaisArgentinaCuenta = "01234567890"
+                $('.PaisTitular').html(PaisArgentinaTitular)
+                $('.PaisBanco').html(PaisArgentinaBanco)
+                $('.PaisNumero').html(PaisArgentinaCuenta)
                 break;
                 case 'Colombia':
                     if ($('.recibir_argentina').not(':visible')) {
@@ -838,6 +844,12 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                     </div>
                     <i class="fas fa-angle-down"></i>`)                       
                     }
+                    var PaisColombiaTitular = "Isaac Mosqueda dese Colombia";
+                    var PaisColombiaBanco = "Isaac Mosqueda Titular"
+                    var PaisColombiaCuenta = "01234567890"
+                    $('.PaisTitular').html(PaisColombiaTitular)
+                    $('.PaisBanco').html(PaisColombiaBanco)
+                    $('.PaisNumero').html(PaisColombiaCuenta)
                     break;
                     case 'Estados Unidos':{
                         if ($('.recibir_usa').not(':visible')) {
@@ -852,6 +864,12 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                         </div>
                         <i class="fas fa-angle-down"></i>`)                       
                         }
+                        var PaisUsaTitular = "Isaac Mosqueda dese Estados Unidos";
+                        var PaisUsaBanco = "Isaac Mosqueda Titular"
+                        var PaisUsaCuenta = "01234567890"
+                        $('.PaisTitular').html(PaisUsaTitular)
+                        $('.PaisBanco').html(PaisUsaBanco)
+                        $('.PaisNumero').html(PaisUsaCuenta)
                     }      
             default:
                 break;
