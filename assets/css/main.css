@@ -4918,4 +4918,39 @@ label{
 .select{
     border: 2px solid #1ec167;
 }
+.file{
+	width: 100%;
+	position: relative;
+	margin: 1em auto;
+	background: #1ec1674f;
+	border-radius: 5px;
+    border: 1px var(--color-verde) dashed;
+    height: 55px;
+}
+
+.file input[type="file"]{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 50px;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.file p{
+	text-align: center;
+	font-size: 18px;
+	color: #FFF;
+	padding: 15px;
+	color: #FFF;
+}
+
+.file p:before{
+	content: "Subir Documento";
+}
+
+.file:hover p:before{
+	content: "Subir Documento";
+}
 /* Fin de rodolfo :( */

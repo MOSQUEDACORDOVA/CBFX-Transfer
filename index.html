@@ -221,7 +221,7 @@
                                         <div class="row form-group-margin">
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="Monto">Monto</label>
-                                                <input type="number" name="monto" class="form-control field-name" placeholder="Monto">
+                                                <input type="number" name="monto" class="form-control field-name" placeholder="Monto" required>
                                                 <div class="selectbox">
                                                     <div class="select" id="select">
                                                         <div class="contenido-select DescripcionMonto">
@@ -257,7 +257,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="pais" id="inputSelect" value="">
+                                                <input type="hidden" name="pais" id="inputSelect" value="" required>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="EnviarDesde">Enviar Desde</label>
@@ -296,7 +296,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="pais" id="inputSelectdesde" value="">
+                                                <input type="hidden" name="pais" id="inputSelectdesde" value="" required>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="RecivirEn">Recibir en</label>
@@ -343,7 +343,7 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="pais" id="inputSelectrecibir" value="">
+                                                <input type="hidden" name="pais" id="inputSelectrecibir" value="" required>
                                             </div>
                                             <div class="col-12 col-12 m-0 pl-md-2">
                                                 <span class="form-alert"></span>
@@ -351,7 +351,7 @@
                                             
                                             <!-- Action -->
                                             <div class="col-12 input-group m-0 p-2 buttons" >
-                                                <a id="formPrimero" class="col-12 mt-4 mt-sm-0 btn primary-button" style="max-width: none;">Enviar</a>
+                                                <a id="formPrimero" class="col-12 mt-4 mt-sm-0 btn primary-button" style="max-width: none;">Siguiente</a>
                                             </div>
                                         </div>
                                     </form>
@@ -359,22 +359,24 @@
                                         <div class="row form-group-margin">
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Nombre</label>
-                                                <input type="text" class="form-control field-name">
+                                                <input type="text" class="form-control field-name" required>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Teléfono</label>
-                                                <input type="text" class="form-control field-name">
+                                                <input type="tel" class="form-control field-name" required>
                                             </div>
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="">Documento de Identidad</label>
-                                                <input type="text" class="form-control field-name">
+                                                <input type="number" class="form-control field-name" required>
                                             </div>
                                             <div class="col-12 m-0 p-2 input-group">
-                                                <label for="">Subir Documento de Identidad</label>
-                                                <input type="file" class="form-control field-name">
+                                                <div class="file">
+                                                    <p></p>
+                                                    <input type="file" required>
+                                                </div>
                                             </div>
                                             <div class="col-12 input-group m-0 p-2 buttons">
-                                                <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="AntesFinFormulario" style="max-width: none;">Enviar</a>
+                                                <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="AntesFinFormulario" style="max-width: none;">Siguiente</a>
                                             </div>
                                         </div>
                                     </form>
@@ -392,6 +394,26 @@
                                         <div class="pais">
                                             <h3>Numero de Cuenta:</h3>
                                             <span class="PaisNumero"></span>
+                                        </div>
+                                        <div class="col-12 input-group m-0 p-2 buttons">
+                                            <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="PedirComprobante" style="max-width: none;">Siguiente</a>
+                                        </div>
+                                    </div>
+                                    <form action="" class="comprobantedeposito" style="display:none;">
+                                        <div class="formg-group">
+                                            <label for="">Comprobante de la transacción</label>
+                                            <div class="file">
+                                                <p></p>
+                                                <input type="file" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 input-group m-0 p-2 buttons">
+                                            <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="despedida" style="max-width: none;">Siguiente</a>
+                                        </div>
+                                    </form>
+                                    <div class="TextoDespedida" style="display: none;">
+                                        <div class="pais d-flex justify-content-center text-center" style="height: 100px; align-items: center;">
+                                            <div>En breve momento nos contactaremos con usted </div>
                                         </div>
                                     </div>
                                 </div>

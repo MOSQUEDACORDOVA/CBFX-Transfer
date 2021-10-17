@@ -922,6 +922,14 @@ $( document ).ready(function() {
         $('.FinFormulario').show("slow");
         $('.formdos').hide("slow");
     })
+    $('#PedirComprobante').on('click',()=>{
+        $('.comprobantedeposito').show("slow");
+        $('.FinFormulario').hide("slow");
+    })
+    $('#despedida').on('click',()=>{
+        $('.TextoDespedida').show("slow");
+        $('.comprobantedeposito').hide("slow");
+    })
 })
 
 
