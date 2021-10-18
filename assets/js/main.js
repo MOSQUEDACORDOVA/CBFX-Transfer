@@ -927,8 +927,12 @@ $( document ).ready(function() {
         $('.FinFormulario').hide("slow");
     })
     $('#despedida').on('click',()=>{
-        $('.TextoDespedida').show("slow");
+        $('.DatosATranferir').show("slow");
         $('.comprobantedeposito').hide("slow");
+    })
+    $('#DatosATranferir').on('click',()=>{
+        $('.TextoDespedida').show("slow");
+        $('.DatosATranferir').hide("slow");
     })
 })
 
