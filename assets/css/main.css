@@ -3785,6 +3785,10 @@ form[data-steps="3"] .progressbar li {
     overflow: hidden;
 }
 
+.simbolo {
+    color: #1ec167;
+}
+
 .content .gallery {
     margin: 35px 0 0 0;
 }
