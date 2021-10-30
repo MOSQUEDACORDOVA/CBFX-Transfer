@@ -1,18 +1,14 @@
 <?php
 class SeccionData {
-	public static $tablename = "seccionTab";																			
+	public static $tablename = "cambio";																			
 
 	public function __construct(){
 		$this->id = '0';
-		$this->titulo = '0';
-		$this->texto = '0';
-		$this->cantidad = '0';
-		$this->estatus="";
-		$this->idSeccionTab = '0';
-		$this->tituloSeccion = '';
-		$this->textSeccion = '';
-		$this->caption="";
-		$this->enlace="";
+		$this->pais = '0';
+		$this->codigo = '0';
+		$this->monto = '0';
+		$this->estatus = '0';
+		
 	}
 
 	
@@ -109,39 +105,8 @@ public static function getByIdEnlace($id){
 
 
 
-	public static function getAllEnlaces($estatus){
-		$sql = "select * from  enlace ";	
-		//echo $sql;
-		$query = Executor::doit($sql);
-		$array = array();
-		$cnt = 0;
-		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new SeccionData();    
-			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->caption = $r['caption'];
-			$array[$cnt]->enlace = $r['enlace'];
-			$array[$cnt]->estatus = $r['estatus'];
-		$cnt++;
-		}
-		return $array;
-	}
 
-	public static function getAllEnlacesActivos(){
-		$sql = "select * from  enlace WHERE estatus=1 ";	
-		//echo $sql;
-		$query = Executor::doit($sql);
-		$array = array();
-		$cnt = 0;
-		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new SeccionData();    
-			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->caption = $r['caption'];
-			$array[$cnt]->enlace = $r['enlace'];
-			$array[$cnt]->estatus = $r['estatus'];
-		$cnt++;
-		}
-		return $array;
-	}
+
 	
 public static function getAll($estatus){
 	$sql = "select *  from ".self::$tablename;	
@@ -152,88 +117,13 @@ public static function getAll($estatus){
 	while($r = $query[0]->fetch_array()){
 		$array[$cnt] = new SeccionData();    
 		$array[$cnt]->id = $r['id'];
-		$array[$cnt]->titulo = $r['titulo'];
+		$array[$cnt]->pais = $r['pais'];
+		$array[$cnt]->codigo = $r['codigo'];
+		$array[$cnt]->monto = $r['monto'];
 		$array[$cnt]->estatus = $r['estatus'];
 	$cnt++;
 	}
 	return $array;
-}
-
-public static function getAllSecciones($id){
-	$sql = "select *  from seccion where idSeccionTab=$id";
-	//echo $sql;
-	$query = Executor::doit($sql);
-	$array = array();
-	$cnt = 0;
-	while($r = $query[0]->fetch_array()){
-		$array[$cnt] = new SeccionData();    
-		$array[$cnt]->id = $r['id'];
-		$array[$cnt]->titulo = $r['titulo'];
-		$array[$cnt]->texto = $r['texto'];
-		$array[$cnt]->estatus = $r['estatus'];
-	$cnt++;
-	}
-	return $array;
-}
-
-public static function getAllMenu($id){
-	$sql = "select *  from seccion where idSeccionTab=$id";
-	//echo $sql;
-	$query = Executor::doit($sql);
-	$array = array();
-	$cnt = 0;
-	while($r = $query[0]->fetch_array()){
-		$array[$cnt] = new SeccionData();    
-		$array[$cnt]->id = $r['id'];
-		$array[$cnt]->titulo = $r['titulo'];
-		$array[$cnt]->texto = $r['texto'];
-		$array[$cnt]->estatus = $r['estatus'];
-	$cnt++;
-	}
-	return $array;
-}
-
-public static function getDataSeccion($estatus){
-	$sql = "SELECT *  FROM seccion  WHERE id = $estatus";	
-	//echo $sql;
-	$query = Executor::doit($sql);
-	$array = array();
-	$cnt = 0;
-	while($r = $query[0]->fetch_array()){
-		$array[$cnt] = new SeccionData();    
-		$array[$cnt]->id = $r['id'];
-		$array[$cnt]->texto = $r['texto'];
-		$array[$cnt]->estatus = $r['estatus'];
-	$cnt++;
-	}
-	return $array;
-}
-
-public static function getAllDAtos($estatus){
-	$sql = "SELECT *  FROM seccion  WHERE idSeccionTab = $estatus ORDER BY id ASC";	
-	//echo $sql;
-	$query = Executor::doit($sql);
-	$array = array();
-	$cnt = 0;
-	while($r = $query[0]->fetch_array()){
-		$array[$cnt] = new SeccionData();    
-		$array[$cnt]->id = $r['id'];
-		$array[$cnt]->tituloSeccion = $r['titulo'];
-		$array[$cnt]->textSeccion = $r['texto'];
-		$array[$cnt]->estatus = $r['estatus'];
-	$cnt++;
-	}
-	return $array;
-}
-
-
-
-
-	
-	
-
-	
-
-	
+}	
 }
 ?>

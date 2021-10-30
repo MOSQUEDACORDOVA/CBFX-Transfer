@@ -11,12 +11,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
-                        <h4 class="page-title">Canadá</h4>
+                        <h4 class="page-title">Tazas de cambio</h4>
                         <div class="d-flex align-items-center">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Secciones</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Tazas</li>
                                 </ol>
                             </nav>
                         </div>
@@ -38,13 +38,13 @@
                     <div class="col-12">
                         <div class="card">
                         <div class="card-body">                              
-                        <h4 class="card-title">  <a href="#"   class="btn waves-effect waves-light btn-rounded btn-primary"  alt="default" data-toggle="modal" data-target="#responsive-modal"  >Agregar Sección</a></h4>
+                        <h4 class="card-title">  <a href="#"   class="btn waves-effect waves-light btn-rounded btn-primary"  alt="default" data-toggle="modal" data-target="#responsive-modal"  >Agregar Tasa</a></h4>
                                 <div class="table-responsive">
                                     <table id="lang_opt" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>                                              
-                                                <th>Sección</th> 
-                                                <th>Contenido</th>                                                                                             
+                                                <th>Taza</th> 
+                                                <th>Cantidad</th>                                                                                             
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>

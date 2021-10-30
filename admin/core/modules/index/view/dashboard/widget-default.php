@@ -37,21 +37,10 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Mis guias</h4>
-                                <h5 class="card-subtitle">Visitas</h5>
+                                <h4 class="card-title">Transferencias</h4>
+                                <h5 class="card-subtitle">Realizadas</h5>
                                 <div class="row">
-                                    <!-- column -->
-                                    <div class="col-sm-12 col-md-6 col-lg-10">
-                                        <div id="visitfromworld" style="height: 500px"></div>
-                                    </div>
-                                    <!-- column -->
-                                    <div class="col-sm-12 col-md-6 col-lg-2" >
-                                        <ul class="list-style-none scrollable p-r-15" style="height: 250px; position: relative;" id="guias">
-                                          
-                                          
-                                        </ul>
-                                        <a href="index.php?view=agendas" class="btn btn-info m-t-10">Ver detalles</a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

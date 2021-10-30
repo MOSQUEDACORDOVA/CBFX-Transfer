@@ -18,7 +18,7 @@ $(function() {
         let timerInterval
           Swal.fire({
             title: 'Saliendo ...!',
-            html: 'Vuelve pronto Nati..',
+            html: 'Vuelve pronto ..',
             timer: 3000,
             timerProgressBar: true,
             didOpen: () => {
@@ -116,27 +116,3 @@ function salir(){
 });
 }
 
-/*
-$(document).ready(function() {
-  $('#data').ready(function() {
-    cargarCategorias()
-        return false;
- 
-  });
-
-});  
-function cargarCategorias(){
-  var t =2;
-  $.ajax({  
-    cache: false,
-    type: "GET",
-    url: 'admin/core/modules/index/view/index/index.php?action=categorias', 
-    data:{t:t},   
-    success: function(data) {
-  //  alert(data);
-      }, complete: function(){
-        $('#data').load('admin/core/modules/index/view/index/index.php?action=categorias&t=2');
-      }
-});
-}
-*/

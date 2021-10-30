@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>a bordo Nati</title>
+    <title>CBFX | Envío$ - Envía dinero de forma rápida y fácil.</title>
     <!-- Custom CSS -->
     <link href="assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="assets/extra-libs/c3/c3.min.css" rel="stylesheet">
@@ -31,10 +31,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7R50sKkqNrACGSC99F2vkcyZ8NpMSxW8"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script> 
-  <link href="assets/libs/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -173,28 +170,13 @@
                             </ul>
                         </li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Mis entradas </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Configuracion </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a  href="index.php?view=entradas" class="sidebar-link"><i class="mdi mdi-bookmark-outline"></i><span class="hide-menu"> Blog </span></a></li>
+                                <li class="sidebar-item"><a  href="index.php?view=secciones" class="sidebar-link"><i class="mdi mdi-bookmark-outline"></i><span class="hide-menu"> Tasa de cambio </span></a></li>
 
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-label"></i><span class="hide-menu">Mis Guias </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index.php?view=agendas" class="sidebar-link"><i class="mdi mdi-label-outline"></i><span class="hide-menu"> Guias </span></a></li>
-                            </ul>
-                        </li> 
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-label"></i><span class="hide-menu">Seccion Canadá </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="index.php?view=secciones" class="sidebar-link"><i class="mdi mdi-label-outline"></i><span class="hide-menu"> Secciones </span></a></li>
-                                <li class="sidebar-item"><a href="index.php?view=enlaces" class="sidebar-link"><i class="mdi mdi-label-outline"></i><span class="hide-menu"> Enlaces de Interés </span></a></li>
-                            </ul>
-                        </li>     
-                                         
-
-						
-						
-                    </ul>
+                      </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
@@ -291,82 +273,12 @@ if(isset($_SESSION["logged_in"])){
     <!-- Initialize Quill editor -->
      <!-- This Page JS -->
  
-     <!-- This Page JS -->
-     <script src="assets/libs/quill/dist/quill.min.js"></script>
+     
      <!-- <script src="assets/libs/summernote/dist/summernote-bs4.min.js"></script> -->
      <script src="dist/js/pagina/canada.js"></script>
     <!-- Initialize Quill editor -->
 
-    <script>
-
-    $(function() {
-   // "use strict";
-  /** Default editor configuration **/
-  
-
-   if ($('#visitfromworld').length) {
-		$('#visitfromworld').ready(function() {
-		     // ============================================================== 
-    // world map
-    // ==============================================================
-    jQuery('#visitfromworld').vectorMap({
-        map: 'world_mill_en',
-        backgroundColor: '#2961AA',
-        borderColor: '#fff',
-        borderOpacity: 0,
-        borderWidth: 0,
-        zoomOnScroll: false,
-        color: '#dfe2e9',
-        regionStyle: {
-            initial: {
-                fill: '#dfe2e9',
-                'stroke-width': 1,
-                'stroke': '#dfe2e9'
-            }
-        },
-        markerStyle: {
-            initial: {
-                r: 5,
-                'fill': '#dfe2e9',
-                'fill-opacity': 1,
-                'stroke': '#dfe2e9',
-                'stroke-width': 1,
-                'stroke-opacity': 1
-            },
-        },
-        enableZoom: true,
-        hoverColor: '#79e580',
-        markers: [
-
-            <?php                                     
-                $guias = AgendaData::getAllDatos("agenda");                             
-				foreach($guias as $agenda){
-			
-                echo "{";
-                echo "latLng: [".$agenda->lat.", ".$agenda->lon."],";
-                echo " name: '".$agenda->o1."',";
-                echo " style: { fill: '#2961ff' }";
-                echo "},";
-            }?>
-          
-        ],
-        hoverOpacity: null,
-        normalizeFunction: 'linear',
-        scaleColors: ['#93d5ed', '#93d5ee'],
-        selectedColor: '#cbd0db',
-        selectedRegions: [],
-        showTooltip: true
-    });
-			  return false;
-	   
-		});
-	  } else {
-		//alert('no existo')
-	  }
-
-});
-
-    </script>
+    
 </body>
 
 </html>
