@@ -34,10 +34,20 @@ echo json_encode($result);
 }
 
 if($tipo==4){
-  $titulo = $_POST['titulo'];
-  $canada  = new SeccionData(); 
-  $canada->titulo =  $titulo;
-  $canada->add();
+  $pais = $_POST['pais'];
+  $abreviatura = $_POST['abreviatura'];
+  $usd = $_POST['usd'];
+  $ars = $_POST['ars'];
+  $cop = $_POST['cop'];
+  $ves = $_POST['ves'];
+  $moneda  = new MonedaData(); 
+  $moneda->pais =  $pais;
+  $moneda->abreviatura =  $abreviatura;
+  $moneda->usd =  $usd;
+  $moneda->ars =  $ars;
+  $moneda->cop =  $cop;
+  $moneda->ves =  $ves;
+  $moneda->add();
   echo "1"; 
   
 }
@@ -64,9 +74,9 @@ if($tipo==6){
 
 if($tipo==7){
   $id = $_POST['id'];
-  $canada  = new SeccionData(); 
-  $canada->id =  $id;  
-  $canada->delSeccion();
+  $moneda  = new MonedaData(); 
+  $moneda->id =  $id;  
+  $moneda->del();
   echo "1"; 
   
 }

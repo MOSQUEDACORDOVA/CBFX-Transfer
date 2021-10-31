@@ -38,13 +38,13 @@
                     <div class="col-12">
                         <div class="card">
                         <div class="card-body">                              
-                        <h4 class="card-title">  <a href="#"   class="btn waves-effect waves-light btn-rounded btn-primary"  alt="default" data-toggle="modal" data-target="#responsive-modal"  >Agregar Tasa</a></h4>
+                        <h4 class="card-title">  <a href="#"   class="btn waves-effect waves-light btn-rounded btn-primary"  alt="default" data-toggle="modal" data-target="#responsive-modal"  >Agregar Moneda</a></h4>
                                 <div class="table-responsive">
                                     <table id="lang_opt" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>                                              
-                                                <th>Taza</th> 
-                                                <th>Cantidad</th>                                                                                             
+                                                <th>Pais</th> 
+                                                <th>Abreviatura</th>                                                                                 
                                                 <th>Opciones</th>
                                             </tr>
                                         </thead>
@@ -83,13 +83,17 @@
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Agregar Sección</h4>
+                                                <h4 class="modal-title">Agregar Tasa</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                             </div>
                                             <div class="modal-body">
                                                 <form action="#" method ="POST" id="c1" class="">                      
                                                     <div class="form-group">
-                                                        <label>Sección</label>
+                                                        <label>Pais</label>
+                                                        <input type="text" class="form-control" id="titulo" name ="titulo">                               
+                                                    </div>     
+                                                    <div class="form-group">
+                                                        <label>Taza</label>
                                                         <input type="text" class="form-control" id="titulo" name ="titulo">                               
                                                     </div>                              
                                                 </form>        

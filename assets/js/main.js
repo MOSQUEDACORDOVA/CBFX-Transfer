@@ -728,6 +728,7 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
             case 'ARS':
                 $('#contenidoselecdesde').html($('#desde_argentina').html())
                 $('#inputSelectdesde').val('Argentina')
+                $('#moneda').val('ARS')
                 var PaisArgentinaTitular = "Isaac Mosqueda dese Argentina";
                 var PaisArgentinaBanco = "Isaac Mosqueda Titular"
                 var PaisArgentinaCuenta = "01234567890"
@@ -745,6 +746,7 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
             case 'COP':{
                 $('#contenidoselecdesde').html($('#desde_colombia').html())
                 $('#inputSelectdesde').val('Colombia')
+                $('#moneda').val('COP')
                 var PaisColombiaTitular = "Isaac Mosqueda dese Colombia";
                 var PaisColombiaBanco = "Isaac Mosqueda Titular"
                 var PaisColombiaCuenta = "01234567890"
@@ -761,6 +763,7 @@ document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
             case 'USD':{
                 $('#contenidoselecdesde').html($('#desde_estados_unidos').html())
                 $('#inputSelectdesde').val('Estados Unidos')
+                $('#moneda').val('USD')
                 var PaisUsaTitular = "Isaac Mosqueda dese Estados Unidos";
                 var PaisUsaBanco = "Isaac Mosqueda Titular"
                 var PaisUsaCuenta = "01234567890"
@@ -816,6 +819,7 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                 $('.moneda_argentina').addClass('active')
                 $('.DescripcionMonto').html($('.moneda_argentina').html())
                 $('#inputSelect').val('ARS')
+                $('#moneda').val('ARS')
                 if ($('#inputSelectrecibir').val() == 'Argentina') {
                     console.log('hola mundo')
                     $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
@@ -838,6 +842,7 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                     $('.recibir_colombia').addClass('d-none')
                     $('.DescripcionMonto').html($('.moneda_colombia').html())
                     $('#inputSelect').val('COP')
+                    $('#moneda').val('COP')
                     if ($('#inputSelectrecibir').val() == 'Colombia') {
                         $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
                         <p class="descripcion desc_recibir">Recibir en</p>
@@ -858,7 +863,8 @@ document.querySelectorAll('#opcionesdesde > .opciondesde').forEach((opciondesde)
                         $('.recibir_usa').addClass('d-none')
                         $('.DescripcionMonto').html($('.moneda_usa').html())
                         $('#inputSelect').val('USD')
-                        if ($('#inputSelectrecibir').val() == 'Estado Unidos') {
+                        $('#moneda').val('USD')
+                        if ($('#inputSelectrecibir').val() == 'Estados Unidos') {
                             $('#selectrecibir').html(`<div class="contenido-select contenidoselecrecibir" id="contenidoselecrecibir">
                             <p class="descripcion desc_recibir">Recibir en</p>
                         </div>
@@ -893,7 +899,7 @@ const selectrecibir = document.querySelector('#selectrecibir');
 const opcionesrecibir = document.querySelector('#opcionesrecibir');
 const contenidoSelectrecibir = document.querySelector('#selectrecibir .contenidoselecrecibir');
 const hiddenInputrecibir = document.querySelector('#inputSelectrecibir');
-
+const hiddenInputrecibirM = document.querySelector('#monedar');
 document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionrecibir) => {
 	opcionrecibir.addEventListener('click', (e) => {
 		e.preventDefault();
@@ -901,8 +907,12 @@ document.querySelectorAll('#opcionesrecibir > .opcionrecibir').forEach((opcionre
 		selectrecibir.classList.toggle('active');
 		opcionesrecibir.classList.toggle('active');
 		hiddenInputrecibir.value = e.currentTarget.querySelector('.descripcion').innerHTML;
+
+        hiddenInputrecibirM.value = e.currentTarget.querySelector('.descripcion').innerHTML;
+        console.log('llmar ajax');
+        realizarCalculo();
         $('#selectrecibir').html(e.currentTarget.innerHTML)
-	});
+       	});
 });
 
 
@@ -933,7 +943,99 @@ $( document ).ready(function() {
     $('#DatosATranferir').on('click',()=>{
         $('.TextoDespedida').show("slow");
         $('.DatosATranferir').hide("slow");
+        enviarCorreo();
     })
+  
 })
+
+  
+function enviarCorreo(){
+    var moneda = $("#moneda").val().trim();
+    var monedar = $("#monedar").val().trim();
+    var monto = $("#alerta").text();
+    var nombreEnvia = $("#nombreEnvia").val().trim();
+    var telefonoEnvia = $("#telefonoEnvia").val().trim();
+    var documentoEnvia = $("#documentoEnvia").val().trim();
+    var emailEnvia = $("#emailEnvia").val().trim();
+    var nombreRecibe = $("#nombreRecibe").val().trim();
+    var bancoRecibe = $("#bancoRecibe").val().trim();
+    var cuentaRecibe = $("#cuentaRecibe").val().trim();
+    var documentoRecibe = $("#documentoRecibe").val().trim();
+    
+console.log("Enviando");
+ console.log(moneda);
+ console.log(monedar);
+ console.log(monto);
+ console.log(nombreEnvia);
+ console.log(telefonoEnvia);
+ console.log(documentoEnvia);
+ console.log(emailEnvia);
+ console.log(nombreRecibe);
+ console.log(bancoRecibe);
+ console.log(cuentaRecibe);
+ console.log(documentoRecibe);
+
+  }
+ 
+
+function realizarCalculo(){
+    var moneda = $("#moneda").val().trim(); 
+    var monedar = $("#monedar").val().trim();
+    var monto = $("#monto").val().trim();
+    var cambio ="";
+    $('#alerta').html("");
+    console.log(moneda);
+    console.log(monedar);
+    console.log(monto);
+if (monedar=="Argentina"){ 
+     cambio ="ARS";
+  } 
+  if (monedar=="Colombia"){ 
+    cambio ="COP";
+ } 
+ if (monedar=="Estados Unidos"){ 
+    cambio ="USD";
+ } 
+ if (monedar=="Venezuela"){ 
+    cambio ="VES";
+ } 
+ console.log(cambio);
+    
+    $.ajax({
+      type: "GET",
+      url: 'admin/core/modules/index/view/index/index.php?action=combos&c=MonedaData&t='+moneda, 
+  }).done(function(categorias) {  
+  console.log(categorias);
+    var i = 0;
+    var tope =categorias.length;
+    var montoCambio =0;
+    if(tope>=1){   
+    for (var i = 0; i < tope; i++) {
+        if (cambio=="ARS"){ 
+            montoCambio = categorias[i].ars*monto
+         } 
+         if (cambio=="COP"){ 
+            montoCambio = categorias[i].cop*monto
+         } 
+         if (cambio=="USD"){ 
+            montoCambio = categorias[i].usd*monto
+         } 
+         
+        if (cambio=="VES"){ 
+            montoCambio = categorias[i].ves*monto
+         } 
+
+         $('#alerta').prepend("<b>Enviaras la cantidad de : </b> "+montoCambio+" "+cambio+"");
+    }
+  
+  }else{
+   
+  }
+  
+  });
+   
+
+  }
+ 
 
 

@@ -1,12 +1,12 @@
 <?php
 $clase =$_GET['c'];
-$tabla = $_GET['t'];
+$dato = $_GET['t'];
 $datos = new $clase(); 
 $result=[];
 
 switch($_SERVER["REQUEST_METHOD"]) {
     case "GET":
-        $result = $datos->getAllDatos($tabla);
+        $result = $datos->getDato($dato);
         break;
 }
 

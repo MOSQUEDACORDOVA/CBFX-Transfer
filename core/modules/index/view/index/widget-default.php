@@ -221,7 +221,7 @@
                                         <div class="row form-group-margin">
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="Monto">Monto</label>
-                                                <input type="number" name="monto" class="form-control field-name" placeholder="Monto" required>
+                                                <input type="number" name="monto" id="monto" class="form-control field-name" placeholder="Monto" required>
                                                 <div class="selectbox">
                                                     <div class="select" id="select">
                                                         <div class="contenido-select DescripcionMonto">
@@ -296,7 +296,10 @@
                                                         </a>
                                                     </div>
                                                 </div>
+                                                <form action="php/form.php" id="nexgen-simple-forms" class="nexgen-simple-form formdos" style="display: none;">
                                                 <input type="hidden" name="pais" id="inputSelectdesde" value="" required>
+                                                <input type="hidden" name="moneda" id="moneda" value="" required>
+                                                </form>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="RecivirEn">Recibir en</label>
@@ -343,10 +346,14 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <input type="hidden" name="pais" id="inputSelectrecibir" value="" required>
+                                                <form action="php/form.php" id="nexgen-simple-forms" class="nexgen-simple-form formdos" style="display: none;">
+                                                <input type="hidden" name="paisr" class="inputSelectrecibir" id="inputSelectrecibir" value="" required>
+                                                <input type="hidden" name="monedar" id="monedar" value="" required>
+                                                </form>
                                             </div>
                                             <div class="col-12 col-12 m-0 pl-md-2">
-                                                <span class="form-alert"></span>
+                                                <span class="form-alerta alerta" id="alerta"></span>
+                                                <span class="form-alerta alerta2" id="alerta2"></span>
                                             </div>
                                             
                                             <!-- Action -->
@@ -357,17 +364,24 @@
                                     </form>
                                     <form action="php/form.php" id="nexgen-simple-forms" class="nexgen-simple-form formdos" style="display: none;">
                                         <div class="row form-group-margin">
+                                              <div class="col-12">
+                                                <h5 class="text-center">Datos de quien envìa</h5>
+                                            </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Nombre</label>
-                                                <input type="text" class="form-control field-name" required>
+                                                <input type="text" class="form-control field-name" id="nombreEnvia" required>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Teléfono</label>
-                                                <input type="tel" class="form-control field-name" required>
+                                                <input type="tel" class="form-control field-name" id="telefonoEnvia" required>
                                             </div>
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="">Documento de Identidad</label>
-                                                <input type="number" class="form-control field-name" required>
+                                                <input type="number" class="form-control field-name" id="documentoEnvia" required>
+                                            </div>
+                                            <div class="col-12 m-0 p-2 input-group">
+                                                <label for="">Email</label>
+                                                <input type="email" class="form-control field-name" id="emailEnvia" required>
                                             </div>
                                             <div class="col-12 input-group m-0 p-2 buttons">
                                                 <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="AntesFinFormulario" style="max-width: none;">Siguiente</a>
@@ -414,19 +428,19 @@
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Nombre y Apellido</label>
-                                                <input type="text" class="form-control field-name" required>
+                                                <input type="text" class="form-control field-name" id="nombreRecibe" required>
                                             </div>
                                             <div class="col-12 col-md-6 m-0 p-2 input-group">
                                                 <label for="">Nombre del Banco</label>
-                                                <input type="text" class="form-control field-name" required>
+                                                <input type="text" class="form-control field-name" id="bancoRecibe" required>
                                             </div>
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="">Numero de cuenta</label>
-                                                <input type="number" class="form-control field-name" required>
+                                                <input type="number" class="form-control field-name" id="cuentaRecibe" required>
                                             </div>
                                             <div class="col-12 m-0 p-2 input-group">
                                                 <label for="">Numero de Identidad (DNI)</label>
-                                                <input type="number" class="form-control field-name" required>
+                                                <input type="number" class="form-control field-name" id="documentoRecibe" required>
                                             </div>
                                             <div class="col-12 input-group m-0 p-2 buttons">
                                                 <a class="col-12 mt-4 mt-sm-0 btn primary-button " id="DatosATranferir" style="max-width: none;">Siguiente</a>
@@ -803,158 +817,8 @@
 
         </footer>
 
-        <!-- Modal [search] -->
-        <div id="search" class="p-0 modal fade" role="dialog" aria-labelledby="search" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content full">
-                    <div class="modal-header" data-dismiss="modal">
-                        <i class="icon-close fas fa-arrow-right"></i>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row">
-                            <div class="col-12 p-0 align-self-center">
-                                <div class="row">
-                                    <div class="col-12 p-0">
-                                        <h2>What are you looking for?</h2>
-                                        <div class="badges">
-                                            <span class="badge"><a href="#">Consulting</a></span>
-                                            <span class="badge"><a href="#">Audit</a></span>
-                                            <span class="badge"><a href="#">Assurance</a></span>
-                                            <span class="badge"><a href="#">Advisory</a></span>
-                                            <span class="badge"><a href="#">Financial</a></span>
-                                            <span class="badge"><a href="#">Capital Markets</a></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="text" class="form-control" placeholder="Enter Keywords">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group align-self-center">
-                                        <button class="btn primary-button">SEARCH</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
-        <!-- Modal [sign] -->
-        <div id="sign" class="p-0 modal fade" role="dialog" aria-labelledby="sign" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content full">
-                    <div class="modal-header" data-dismiss="modal">
-                        <i class="icon-close fas fa-arrow-right"></i>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/" class="row">
-                            <div class="col-12 p-0 align-self-center">
-                                <div class="row">
-                                    <div class="col-12 p-0 pb-3">
-                                        <h2>Sign In</h2>
-                                        <p>Don't have an account? <a href="#" class="primary-color" data-toggle="modal" data-target="#register">Register now</a>.</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="email" class="form-control" placeholder="Email" required>
-                                    </div>
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="password" class="form-control" placeholder="Password" required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group align-self-center">
-                                        <button class="btn primary-button">SIGN IN</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal [register] -->
-        <div id="register" class="p-0 modal fade" role="dialog" aria-labelledby="register" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content full">
-                    <div class="modal-header" data-dismiss="modal">
-                        <i class="icon-close fas fa-arrow-right"></i>
-                    </div>
-                    <div class="modal-body">
-                        <form action="/" class="row">
-                            <div class="col-12 p-0 align-self-center">
-                                <div class="row">
-                                    <div class="col-12 p-0 pb-3">
-                                        <h2>Register</h2>
-                                        <p>Have an account? <a href="#" class="primary-color" data-toggle="modal" data-target="#sign">Sign In</a>.</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="text" class="form-control" placeholder="Name" required>
-                                    </div>
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="email" class="form-control" placeholder="Email" required>
-                                    </div>
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="password" class="form-control" placeholder="Password" required>
-                                    </div>
-                                    <div class="col-12 p-0 input-group">
-                                        <input type="password" class="form-control" placeholder="Confirm Password" required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 p-0 input-group align-self-center">
-                                        <button class="btn primary-button">REGISTER</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal [map] -->
-        <div id="map" class="p-0 modal fade" role="dialog" aria-labelledby="map" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content full">
-                    <div class="modal-header absolute" data-dismiss="modal">
-                        <i class="icon-close fas fa-arrow-right"></i>
-                    </div>
-                    <div class="modal-body p-0">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.123073808986!2d12.490042215441486!3d41.89021017922119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f61b6532013ad%3A0x28f1c82e908503c4!2sColiseu!5e0!3m2!1spt-BR!2sbr!4v1594148229878!5m2!1spt-BR!2sbr" width="600" height="450" aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal [responsive menu] -->
-        <div id="menu" class="p-0 modal fade" role="dialog" aria-labelledby="menu" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-slideout" role="document">
-                <div class="modal-content full">
-                    <div class="modal-header" data-dismiss="modal">
-                        <i class="icon-close fas fa-arrow-right"></i>
-                    </div>
-                    <div class="menu modal-body">
-                        <div class="row w-100">
-                            <div class="items p-0 col-12 text-center">
-                                <!-- Append [navbar] -->
-                            </div>
-                            <div class="contacts p-0 col-12 text-center">
-                                <!-- Append [navbar] -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Scroll [to top] -->
         <div id="scroll-to-top" class="scroll-to-top">

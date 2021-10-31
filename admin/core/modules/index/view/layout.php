@@ -60,21 +60,9 @@
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="./">
-                        <!-- Logo icon -->
-                        <b class="logo-icon">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
+                      
                         <span class="logo-text">
-                             <!-- dark Logo text -->
-                             <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                             <!-- Light Logo text -->    
-                             <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                                CBFX | Envío$
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -169,10 +157,17 @@
 
                             </ul>
                         </li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-swap-horizontal"></i><span class="hide-menu">Trasacciones </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a  href="index.php?view=cambios" class="sidebar-link"><i class="mdi mdi-bookmark-outline"></i><span class="hide-menu"> Mesa de cambio </span></a></li>
+
+                            </ul>
+                        </li>
 
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-book-multiple"></i><span class="hide-menu">Configuracion </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a  href="index.php?view=secciones" class="sidebar-link"><i class="mdi mdi-bookmark-outline"></i><span class="hide-menu"> Tasa de cambio </span></a></li>
+                                <li class="sidebar-item"><a  href="index.php?view=monedas" class="sidebar-link"><i class="mdi mdi-bookmark-outline"></i><span class="hide-menu"> Monedas </span></a></li>
 
                             </ul>
                         </li>
@@ -194,7 +189,7 @@ if(isset($_SESSION["logged_in"])){
 ?>
            
 <footer class="footer text-center">
-       All Rights Reserved by a bordo Nati . Designed and Developed by <a href="#">mosquedacordova</a>.
+       All Rights Reserved by  . Designed and Developed by <a href="#">mosquedacordova</a>.
 </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

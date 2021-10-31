@@ -37,8 +37,8 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Transferencias</h4>
-                                <h5 class="card-subtitle">Realizadas</h5>
+                                <h4 class="card-title">Transacciones</h4>
+                                <h5 class="card-subtitle">Pendientes</h5>
                                 <div class="row">
                                    
                                 </div>

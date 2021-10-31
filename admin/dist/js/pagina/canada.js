@@ -1,27 +1,16 @@
 $(function() { 
   
-  $('#editor')
-  .trumbowyg()
-  .on('tbwinit tbwfocus tbwblur tbwchange tbwresize tbwpaste tbwopenfullscreen tbwclosefullscreen tbwclose', function(e){
-      console.log(e.type);
-  });
 
-
-
-  var c2 ="";
-  var c2 = new Quill('#editor2', {
-    theme: 'snow'
-  });
 
  //* eliminar Guia
 //=============================================*/
-$(".table").on("click", ".btnEliminarSeccion", function(e){ 
+$(".table").on("click", ".btnEliminarMoneda", function(e){ 
   
-	var idSeccion = $(this).attr("idSeccion");
+	var idMoneda = $(this).attr("idMoneda");
 
   e.preventDefault();
   Swal.fire({
-    title: 'Deseas eliminar esta sección?',
+    title: 'Deseas eliminar esta moneda?',
     text: "No podras detener la operacion un ves iniciada!",
     icon: 'warning',
     showCancelButton: true,
@@ -59,7 +48,7 @@ $(".table").on("click", ".btnEliminarSeccion", function(e){
           }
         })
     //  pagar();
-    eliminarSeccion(idSeccion);
+    eliminarMoneda(idMoneda);
     }
   })
 
@@ -265,32 +254,37 @@ return false;
    
   return false;
   });
-   //inicializarjQueryValidation();
- $(".registrarTab").on('click', function() {
+   //registrarMoneda();
+ $(".registrarMoneda").on('click', function() {
   //
   var tipo =4;
-  var titulo = $("#titulo").val().trim();  
-  if(titulo==""){
+  var pais = $("#pais").val().trim();  
+  var abreviatura = $("#abreviatura").val().trim();  
+  var usd = $("#usd").val().trim();  
+  var ars = $("#ars").val().trim();  
+  var cop = $("#cop").val().trim();  
+  var ves = $("#ves").val().trim();  
+  if((pais=="") || (abreviatura=="") || (usd=="")|| (ars=="")|| (cop=="")|| (ves=="")){
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Debes escribir titulo del contenido a registrar en la seccion de Canadá'
+      text: 'Debes escribir para seguir registrando'
       
     })
   }else{
     $.ajax({
-      url: '../admin/core/modules/index/view/index/index.php?action=seccion', 
+      url: '../admin/core/modules/index/view/index/index.php?action=moneda', 
         type: 'post',
-        data:{tipo:tipo,titulo:titulo},        
+        data:{tipo:tipo,pais:pais,abreviatura:abreviatura,usd:usd,ars:ars,cop:cop,ves:ves},        
         success: function(response) {
           if(response == 1){                
             console.log(response);
               Swal.fire(
                 'Exito',
-                'Sección registrada  con éxito',
+                'Moneda registrada  con éxito',
                 'success'
               ),
-              window.location = "index.php?view=secciones";
+              window.location = "index.php?view=monedas";
             } else {
               console.log(response),
               Swal.fire({
@@ -634,10 +628,10 @@ function eliminarEnlace(id){
 });
 }
 
-function eliminarSeccion(id){
+function eliminarMoneda(id){
   var tipo =7;
   $.ajax({
-    url: '../admin/core/modules/index/view/index/index.php?action=seccion', 
+    url: '../admin/core/modules/index/view/index/index.php?action=moneda', 
     type:'post',
     data:{tipo:tipo,id:id},
     success:function(response){
@@ -649,7 +643,7 @@ function eliminarSeccion(id){
             text: 'Se ha eliminado exitosamente!' 
 
           }) ;
-          window.location = "index.php?view=secciones";
+          window.location = "index.php?view=monedas";
         }else{
           Swal.fire({
             icon: 'error',
